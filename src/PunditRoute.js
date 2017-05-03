@@ -44,7 +44,7 @@ class PunditRoute extends Component {
   };
 
   render() {
-    const { type, action, model, user, redirectPath component: Component, componentProps, ...rest } = this.props;
+    const { type, action, model, user, redirectPath, component: Component, componentProps, ...rest } = this.props;
     return <Route {...rest} render={this.handleRouteRender} />;
   }
 }
