@@ -26,11 +26,13 @@ class PunditRoute extends Component {
 
   static contextTypes = {
     punditCheck: PropTypes.func,
+    punditType: PropTypes.string,
   };
 
   handleRouteRender = (props) => {
     const { type, action, model, user, redirectPath, component: Component, componentProps } = this.props;
-    if (this.context.punditCheck(type, action, model, user)) {
+    const { punditCheck, punditType } = this.context;
+    if (punditCheck(type || punditType, action, model, user)) {
       return <Component {...props} {...componentProps} />;
     }
     return (
