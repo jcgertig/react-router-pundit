@@ -14,7 +14,9 @@
     "test": "jest --coverage"
   },
   "peerDependencies": {
-    "react": "^15.0.1"
+    "react": "^15.0.1",
+    "react-pundit": "^1.0.0-rc5",
+    "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
     "babel-cli": "*",
@@ -25,7 +27,6 @@
   },
   "dependencies": {
     "jest": "^19.0.2",
-    "lodash.isplainobject": "^4.0.6",
     "prop-types": "^15.5.8"
   },
   "files": [
