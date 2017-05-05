@@ -27,8 +27,11 @@ npm install --save react-pundit react-router-pundit react-router-dom
 
 ## PunditRoute
 
-PunditRoute will pass the original location to the Redirect via the location
+`PunditRoute` will pass the original location to the Redirect via the location
 state as a from. `this.props.location.state.from`
+
+`PunditRoute` can handle redirect paths as the return from the pundit check
+as well as the default boolean return.
 
 ## Example
 

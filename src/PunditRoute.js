@@ -22,13 +22,15 @@ class PunditRoute extends PunditComponent {
 
   handleRouteRender = (props) => {
     const { redirectPath, component: Component, componentProps } = this.props;
-    if (this.passesPermissions()) {
+    const res = this.passesPermissions();
+    if (res === true) {
       return <Component {...props} {...componentProps} />;
     }
+    const pathname = typeof res === 'string' ? res : redirectPath;
     return (
       <Redirect
         to={{
-          pathname: redirectPath,
+          pathname,
           state: { from: props.location }
         }}
       />
