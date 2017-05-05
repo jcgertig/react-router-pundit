@@ -1,38 +1,28 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { PunditComponent } from 'react-pundit';
+import omit from 'lodash.omit';
 
-class PunditRoute extends Component {
+class PunditRoute extends PunditComponent {
 
   static displayName = 'PunditRoute';
 
   static propTypes = {
-    type: PropTypes.string,
-    action: PropTypes.string,
-    model: PropTypes.object,
-    user: PropTypes.object,
+    ...PunditComponent.propTypes,
     component: PropTypes.any,
     redirectPath: PropTypes.string,
     componentProps: PropTypes.object,
   };
 
   static defaultProps = {
-    type: '',
-    action: '',
-    model: {},
-    user: null,
+    ...PunditComponent.defaultProps,
     redirectPath: '/login',
     componentProps: {},
   };
 
-  static contextTypes = {
-    punditCheck: PropTypes.func,
-    punditType: PropTypes.string,
-  };
-
   handleRouteRender = (props) => {
-    const { type, action, model, user, redirectPath, component: Component, componentProps } = this.props;
-    const { punditCheck, punditType } = this.context;
-    if (punditCheck(type || punditType, action, model, user)) {
+    const { redirectPath, component: Component, componentProps } = this.props;
+    if (this.passesPermissions()) {
       return <Component {...props} {...componentProps} />;
     }
     return (
@@ -46,8 +36,8 @@ class PunditRoute extends Component {
   };
 
   render() {
-    const { type, action, model, user, redirectPath, component: Component, componentProps, ...rest } = this.props;
-    return <Route {...rest} render={this.handleRouteRender} />;
+    const props = omit(this.props, Object.keys(PunditRoute.propTypes));
+    return <Route {...props} render={this.handleRouteRender} />;
   }
 }
 

@@ -15,7 +15,7 @@ React component that works with react-pundit and react-router-dom.
 
 ## Pre-requisites
 
-You need react-pundit and react-router-dom.
+You need react-pundit and react-router-dom (React Router V4).
 
 ## Getting Started
 
