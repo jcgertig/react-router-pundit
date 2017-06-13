@@ -1,7 +1,7 @@
 {
   "name": "react-router-pundit",
   "description": "React component that works with react-pundit and react-router-dom.",
-  "version": "1.0.0-rc4",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "author": "jcgertig",
   "repository": "jcgertig/react-router-pundit",
@@ -15,7 +15,7 @@
   },
   "peerDependencies": {
     "react": "^15.0.1",
-    "react-pundit": "^1.0.0-rc8",
+    "react-pundit": "^1.2.0",
     "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
