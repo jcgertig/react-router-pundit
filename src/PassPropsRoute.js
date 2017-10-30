@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Route } from 'react-router-dom';
 
 class PassPropsRoute extends Component {
 
@@ -14,8 +15,8 @@ class PassPropsRoute extends Component {
   };
 
   handleRouteRender = (props) => {
-    const { componentProps } = this.props;
-    return <Component {...props} {...componentProps} />;
+    const { componentProps, component: Comp } = this.props;
+    return <Comp {...props} {...componentProps} />;
   };
 
   render() {

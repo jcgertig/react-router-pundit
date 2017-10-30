@@ -1,7 +1,7 @@
 {
   "name": "react-router-pundit",
   "description": "React component that works with react-pundit and react-router-dom.",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "main": "lib/index.js",
   "author": "jcgertig",
   "repository": "jcgertig/react-router-pundit",
@@ -14,9 +14,9 @@
     "test": "jest --coverage"
   },
   "peerDependencies": {
-    "react": "^15.0.1",
-    "react-pundit": "^1.2.0",
-    "react-router-dom": "^4.1.1"
+    "react": "^16.0.0",
+    "react-pundit": "^2.0.0",
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "babel-cli": "*",
@@ -24,7 +24,7 @@
     "babel-preset-es2015": "^6.6.0",
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-1": "^6.5.0",
-    "jest": "^20.0.4"
+    "jest": "^21.2.1"
   },
   "dependencies": {
     "lodash.omit": "^4.5.0",

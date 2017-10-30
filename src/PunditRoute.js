@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { PunditComponent } from 'react-pundit';
 import omit from 'lodash.omit';
+import { Route, Redirect } from 'react-router-dom';
 
 class PunditRoute extends PunditComponent {
 
@@ -21,10 +22,10 @@ class PunditRoute extends PunditComponent {
   };
 
   handleRouteRender = (props) => {
-    const { redirectPath, component: Component, componentProps } = this.props;
+    const { redirectPath, component: Comp, componentProps } = this.props;
     const res = this.passesPermissions();
     if (res === true) {
-      return <Component {...props} {...componentProps} />;
+      return <Comp {...props} {...componentProps} />;
     }
     const pathname = typeof res === 'string' ? res : redirectPath;
     return (
